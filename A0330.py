@@ -31,3 +31,30 @@
 # C = A + B
 # C.sort()
 # print(str(C))
+#
+# N = int(input())
+# res = ""
+# for i in range(0, N):
+#     s = input()
+#     if s == s[::-1]:
+#         res += '#' + str((i + 1)) + ' YES\n'
+#     else:
+#         res += '#' + str((i + 1)) + ' NO\n'
+# print(res[:len(res) - 1])
+
+n, m = input().split()
+m = int(m)
+
+stack = []  # 스택을 이용
+
+for num in n:
+    while m > 0 and stack and stack[-1] < num:
+        stack.pop()
+        m -= 1
+    stack.append(num)
+
+while m > 0:  # 남은 자릿수를 제거
+    stack.pop()
+    m -= 1
+
+print(''.join(stack))
