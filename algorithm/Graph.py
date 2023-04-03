@@ -1,4 +1,4 @@
-def print_all_friends(g, start):
+def all_friends(g, start):
     qu = []
     done = set()
 
@@ -25,6 +25,6 @@ fr_info = {
     'Jerry': ['Tom']
 }
 
-print_all_friends(fr_info, 'Summer')
+all_friends(fr_info, 'Summer')
 print()
-print_all_friends(fr_info, 'Jerry')
+all_friends(fr_info, 'Jerry')
