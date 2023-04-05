@@ -40,14 +40,10 @@
 #         print(reverse(i), end=' ')
 
 N = int(input())
-
-res = []
-li = []
-li2 = []
+res, li, li2 = [], [], []
+li3 = [0, 0]
 for _ in range(0, N):
     li2.append(0)
-li3 = [0, 0]
-
 for i in range(0, N):
     inner = list(map(int, input().split()))
     li.append(inner)
@@ -56,13 +52,10 @@ for i in range(0, N):
     li3[0] += li[i][i]
     li3[1] += li[i][N - 1 - i]
     res.append(sum(inner))
-
 for i in li2:
     res.append(i)
-
 res.append(li3[0])
 res.append(li3[1])
-
 print(max(res))
 
 
